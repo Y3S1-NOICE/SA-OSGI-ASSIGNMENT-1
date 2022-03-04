@@ -34,6 +34,7 @@ public class QuestionBankServiceImpl implements IQuestionBankService{
 		for (int qid = id; questions.containsKey(qid + 1); qid++) {
 			questions.put(qid,questions.get(qid + 1));
 		}
+		questions.remove(questions.size());
 
 	}
 
