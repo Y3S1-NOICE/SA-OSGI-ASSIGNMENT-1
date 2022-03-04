@@ -13,7 +13,9 @@ public class Activator implements BundleActivator {
 		System.out.println("subcriber started!");
 		serviceReference = context.getServiceReference(IQuestionBankService.class.getName());
 		IQuestionBankService questionBankService = (IQuestionBankService)context.getService(serviceReference);
-		questionBankService.test();
+		
+		Menu menu = new Menu(questionBankService);
+		menu.startMenuTemplate();
 	}
 
 	public void stop(BundleContext context) throws Exception {
